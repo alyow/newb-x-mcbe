@@ -21,12 +21,10 @@ void main() {
     skycol = nlOverworldSkyColors(env.rainFactor, v_fogColor.rgb);
   }
   vec4 sky = vec4(nlRenderSky(skycol, env, -viewDir, v_fogColor, v_underwaterRainTime.z), smoothstep(0.1, -0.3, viewDir.y));
+  sky.rgb = colorCorrection(sky.rgb);
 
   vec4 diffuse = texture2D(s_MatTexture, v_texcoord0);
-  diffuse.rgb *= 0.4 + 3.1*diffuse.rgb;
   diffuse = mix(sky, diffuse, diffuse.a);
-
-  diffuse.rgb = colorCorrection(diffuse.rgb);
 
   gl_FragColor = diffuse;
 }
