@@ -1,16 +1,16 @@
-name = "Newb X Legacy"
-version = [0, 15, 0]
+name = "Newb Reimagined"
+version = [0, 15, 68]
 min_supported_mc_version = [1, 21, 20]
 description = '''
-§c%w
-§7- An enchanced vanilla shader for Minecraft!
-%v
-§3https://devendrn.github.io/newb-shader/
+§7A shader with a fantasy theme without losing the vanilla minecraft feel
+%v | §c%w
+§3https://sites.google.com/view/newb-reimagined/
 ''' # %w = patch warning, %v = version
-authors = ["devendrn"]
-url = "https://devendrn.github.io/newb-shader/"
+authors = ["alyowv", "devendrn"]
+url = "https://sites.google.com/view/newb-reimagined/"
 uuid = "95f774cf-4afa-73e7-a21a-72146307b1d2" # Use https://www.uuidgenerator.net/version4
 materials = ["Sky", "RenderChunk", "Actor", "ActorGlint", "LegacyCubemap", "EndSky", "Clouds", "SunMoon", "Weather", "ItemInHandTextured", "ItemInHandColor", "ItemInHandColorGlint", "Stars"]
+text = " Recommeded:\n§7 Set brightness to 10 - 30\n Don't use texture packs to avoid some bugs\n Restart your minecraft after enabling this shader§r" 
 
 [info] 
 copyright = '''
@@ -29,50 +29,57 @@ credits = '''
 # right-most subpack is enabled by default
 
 [[subpack]]
-define = "ROUNDED_CLOUDS"
+define = "VANILLA_CLOUDS"
 materials = ["Clouds"]
 description = '''
-Rounded Clouds
+§lVanilla Clouds\n§r§7No Aurora
 '''
 
 [[subpack]]
-define = "BOX_CLOUDS"
-materials = ["Clouds", "RenderChunk"]
+define = "SOFT_CLOUDS"
+materials = ["RenderChunk", "Clouds"]
 description = '''
-Box Clouds
+§lSoft Clouds\n§r§7Cirrus Clouds Style, No Aurora
 '''
 
 [[subpack]]
-define = "CHUNK_ANIM"
-materials = ["RenderChunk"]
+define = "DOUBLE_CLOUDS"
+materials = ["Clouds"]
 description = '''
-Chunk loading animation
+§lDouble Cloud Layers\n§r§7Two Cloud Layers, No Aurora
 '''
 
 [[subpack]]
-define = "NO_WAVE_NO_FOG"
-materials = ["RenderChunk"]
+define = "ENDSKY1"
+materials = ["RenderChunk", "EndSky"]
 description = '''
-No fog and wave effects
+§lEnd Sky 1\n§r§7 End Sky Type 1
 '''
 
 [[subpack]]
-define = "NO_FOG"
-materials = ["RenderChunk"]
+define = "ALWAYS_REFL"
+materials = ["RenderChunk", "Sky"]
 description = '''
-No fog effect
+§lAlways Reflection\n§r§7Ground Reflection, Aurora Reflection
 '''
 
 [[subpack]]
-define = "NO_WAVE"
-materials = ["RenderChunk"]
+define = "AURORA2"
+materials = ["RenderChunk", "Clouds"]
 description = '''
-No wave effects
+§lAurora\n§r§7Aurora §bLight Blue §aGreen§r
 '''
 
 [[subpack]]
-define = "DEFAULT"
+define = "AURORA1"
+materials = ["RenderChunk", "Clouds"]
+description = '''
+§lAurora\n§r§7Aurora §bLight Blue §uPurple§r
+'''
+
+[[subpack]]
+define = "COMP"
 materials = []
 description = '''
-Default
+§lDefault\n§r§7Rounded Clouds, No Aurora
 '''
