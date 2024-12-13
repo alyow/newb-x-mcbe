@@ -1,8 +1,9 @@
 # Newb Reimagined
 
-**Newb Reimagined** is a Custom RenderDragon Shader with a fantasy theme without losing the vanilla minecraft feel, This is a variant of the [Newb X Legacy](https://github.com/devendrn/newb-x-mcbe). 
+**Newb Reimagined** is a Custom RenderDragon Shader with a fantasy theme without losing the vanilla minecraft feel, this is a variant of the [Newb X Legacy](https://github.com/devendrn/newb-x-mcbe). 
 
-This shader has features like soft lighting, better clouds, clear water and more colorful auroras! It supports Minecraft Bedrock 1.21+ (Windows/Android/iOS).
+This shader has features like soft lighting, better clouds, clear water and more colorful auroras! 
+It supports Minecraft Bedrock 1.21+ (Windows/Android/iOS).
 
 > [!WARNING]
 > This is a repository Newb Variants created by alyowv
