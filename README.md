@@ -1,6 +1,6 @@
-# Newb X Legacy
+# Newb Reimagined
 
-**Newb X Legacy** is a RenderDragon successor to the legacy GLSL shader, [Newb Shader](https://github.com/devendrn/newb-shader-mcbe). It is an enhanced vanilla shader that focuses on being lightweight and having soft aesthetics. It supports Minecraft Bedrock 1.21+ (Windows/Android/iOS).
+**Newb Reimagined** is a Custom RenderDragon Shader with a fantasy theme without losing the vanilla minecraft feel, This is a variant of the [Newb X Legacy](https://github.com/devendrn/newb-x-mcbe). This shader has features like soft lighting, better clouds, clear water and more colorful auroras! It supports Minecraft Bedrock 1.21+ (Windows/Android/iOS).
 
 > [!WARNING]
 > This is an experimental repository, breaking changes are made often.
@@ -12,8 +12,8 @@
 <br>
 
 ## Downloads
-[v15 stable](https://github.com/devendrn/newb-x-mcbe/releases/tag/v15) (For 1.20.73 or older)  
-[v15 beta](https://github.com/devendrn/newb-x-mcbe/releases/tag/v15-dev) (For 1.20.80 or newer)
+[r15.65](https://www.mediafire.com/file/v8sreeesk1wic31/Newb-Reimagined-r15.65-Normal-Merged.mcpack/file) (Newest for 1.21.20+)  
+[Changelogs](https://sites.google.com/view/newb-reimagined/downloads/release?authuser=0)
 
 Nightly builds for Android (ESSL), Windows (DX), and iOS (Metal) can also be found at the [Discord server](https://discord.gg/newb-community-844591537430069279).
 
