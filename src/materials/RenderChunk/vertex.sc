@@ -2,7 +2,7 @@ $input a_color0, a_position, a_texcoord0, a_texcoord1
 #ifdef INSTANCING
   $input i_data0, i_data1, i_data2, i_data3
 #endif
-$output v_color0, v_color1, v_fog, v_refl, v_texcoord0, v_lightmapUV, v_extra
+$output v_color0, v_color1, v_fog, v_refl, v_texcoord0, v_lightmapUV, v_extra, v_position
 
 #include <bgfx_shader.sh>
 #include <newb/main.sh>
@@ -36,7 +36,7 @@ void main() {
                  (boardPlane * (a_color0.x - 0.5));
     vec4 color = vec4(1.0,1.0,1.0,1.0);
   #else
-    vec3 modelCamPos = ViewPositionAndTime.xyz - worldPos;
+    vec3 modelCamPos = (ViewPositionAndTime.xyz - worldPos);
     float camDis = length(modelCamPos);
     vec3 viewDir = modelCamPos / camDis;
 
@@ -130,6 +130,7 @@ void main() {
   #endif
 
   vec4 pos = mul(u_viewProj, vec4(worldPos, 1.0));
+
   #ifdef NL_RAIN_MIST_OPACITY
     if (env.rainFactor > 0.0) {
       float humidAir = env.rainFactor*lit.y*lit.y*nlWindblow(pos.xyz, t);
@@ -156,7 +157,8 @@ void main() {
   v_color0 = color;
   v_color1 = a_color0;
   v_fog = fogColor;
-
+  v_position = a_position; 
+  
   #else
 
   vec4 pos = mul(u_viewProj, vec4(worldPos, 1.0));
