@@ -90,11 +90,11 @@
 /* Ore glow intensity */
 #define NL_GLOW_TEX 3.9      // 0.4 weak ~ 8.0 bright
 #define NL_GLOW_SHIMMER      // [toggle] shimmer effect
-#define NL_GLOW_LEAK 0.164   // [toggle] 0.08 subtle ~ 1.0 100% brightness of NL_GLOW_TEX
+//#define NL_GLOW_LEAK 0.164   // [toggle] 0.08 subtle ~ 1.0 100% brightness of NL_GLOW_TEX
 
 /* Waving */
-#define NL_PLANTS_WAVE 0.049   // [toggle] 0.02 gentle ~ 0.4 violent
-#define NL_LANTERN_WAVE 0.18   // [toggle] 0.05 subtle ~ 0.4 large swing
+//#define NL_PLANTS_WAVE 0.049   // [toggle] 0.02 gentle ~ 0.4 violent
+//#define NL_LANTERN_WAVE 0.18   // [toggle] 0.05 subtle ~ 0.4 large swing
 #define NL_WAVE_SPEED 2.67     // 0.5 slow wave ~ 5.0 very fast wave
 //#define NL_EXTRA_PLANTS_WAVE // [toggle] !dont use! wave using texture coords (1.21.0 vanilla 2048x1024)
 
@@ -102,10 +102,10 @@
 #define NL_WATER_TRANSPARENCY 0.35   // 0.0 transparent ~ 1.0 normal
 #define NL_WATER_BUMP 0.020          // 0.001 plain ~ 0.2 bumpy water
 #define NL_WATER_TEX_OPACITY 2.72    // 0.0 plain water ~ 1.0 vanilla water texture
-#define NL_WATER_WAVE                // [toggle] wave effect
+//#define NL_WATER_WAVE                // [toggle] wave effect
 //#define NL_WATER_FOG_FADE          // [toggle] fog fade for water
 //#define NL_WATER_REFL_MASK         // [toggle] fake water reflection mask
-#define NL_WATER_CLOUD_REFLECTION    // clouds aurora reflection
+//#define NL_WATER_CLOUD_REFLECTION  // clouds aurora reflection
 #define NL_WATER_TINT vec3(0.553,0.712,1.0)
 
 /* Underwater */
@@ -134,7 +134,7 @@
 /* Rounded cloud Settings */
 #define NL_CLOUD2_THICKNESS 2.42            // 0.5 slim ~ 5.0 fat
 #define NL_CLOUD2_RAIN_THICKNESS 2.1        // 0.5 slim ~ 5.0 fat
-#define NL_CLOUD2_STEPS 7                   // 3 low quality ~ 16 high quality
+#define NL_CLOUD2_STEPS 5                   // 3 low quality ~ 16 high quality
 #define NL_CLOUD2_SCALE vec2(0.038, 0.038)  // 0.003 large ~ 0.3 tiny
 #define NL_CLOUD2_SHAPE 0.67                // 0.0 round ~ 1.0 box
 #define NL_CLOUD2_DENSITY 800.0             // 1.0 blurry ~ 100.0 sharp
@@ -179,17 +179,17 @@
 #define NL_MOON_BLOOM_COL vec3(0.11,0.11,0.13)
 
 /* Fake godrays during sunrise/sunset */
-#define NL_GODRAY 1.1 // [toggle] 0.1 subtle ~ 0.8 strong
+//#define NL_GODRAY 1.1 // [toggle] 0.1 subtle ~ 0.8 strong
 
 /* Sky reflection */
-#define NL_GROUND_REFL 0.043           // [toggle] 0.2 slightly reflective ~ 1.0 fully reflect sky 
+//#define NL_GROUND_REFL 0.043           // [toggle] 0.2 slightly reflective ~ 1.0 fully reflect sky 
 #define NL_GROUND_RAIN_WETNESS 0.6     // 0.0 no wetness ~ 1.0 fully wet blocks when raining
-#define NL_GROUND_RAIN_PUDDLES 1.3     // 0.0 no puddles ~ 1.0 puddles
+#define NL_GROUND_RAIN_PUDDLES 0.0     // 0.0 no puddles ~ 1.0 puddles
 //#define NL_GROUND_AURORA_REFL        // [toggle] aurora reflection on ground
 
 /* Entity (Actor, ItemInHand) */
-#define NL_ENTITY_BRIGHTNESS     0.35 // 0.1 dark ~ 1.6 bright
-#define NL_ENTITY_EDGE_HIGHLIGHT 0.25 // 0.0 no highlight ~ 1.6 bright highlight
+#define NL_ENTITY_BRIGHTNESS     0.30 // 0.1 dark ~ 1.6 bright
+#define NL_ENTITY_EDGE_HIGHLIGHT 0.20 // 0.0 no highlight ~ 1.6 bright highlight
 
 /*
   NEWB SHADER SUBPACK CONFIG
@@ -203,54 +203,24 @@
   Build tool will enable corresponding flags when compiling. 
 */
 
-#ifdef VANILLA_CLOUDS
+#ifdef LOW
+  #undef NL_CLOUD_TYPE
+  #undef NL_FOG
+  #define NL_CLOUD_TYPE 0
+  #define NL_FOG 0.0
+#endif
+
+#ifdef LITE
   #undef NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 0
 #endif
 
-#ifdef SOFT_CLOUDS
+#ifdef MEDIUM
   #undef NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 1
-  #define NL_WATER_CLOUD_REFLECTION
 #endif
 
-#ifdef DOUBLE_CLOUDS
-  #undef NL_CLOUD_TYPE 
-  #define NL_CLOUD_TYPE 2
-  #define NL_CLOUD2_LAYER2
-#endif
-
-#ifdef ENDSKY1
-  #undef NL_END_SKY_TYPE
-  #define NL_END_SKY_TYPE 1
-#endif
-
-#ifdef ALWAYS_REFL
-  #undef NL_GROUND_REFL
-  #define NL_GROUND_REFL 0.64
-  #define NL_GROUND_AURORA_REFL
-  #define NL_WATER_CLOUD_REFLECTION
-  #define NL_RAINBOW
-  #define NL_AURORA 3.4
-#endif
-
-#ifdef AURORA2
-  #undef NL_AURORA
-  #undef NL_AURORA_COL1
-  #define NL_AURORA 3.4
-  #define NL_AURORA_COL1 vec3(0.08,0.7,0.27)
-  #define NL_GROUND_AURORA_REFL
-  #define NL_WATER_CLOUD_REFLECTION
-#endif
-
-#ifdef AURORA1
-  #undef NL_AURORA
-  #define NL_AURORA 3.4
-  #define NL_GROUND_AURORA_REFL
-  #define NL_WATER_CLOUD_REFLECTION
-#endif
-
-#ifdef COMP
+#ifdef CDEF
   #undef NL_CLOUD_TYPE
   #define NL_CLOUD_TYPE 2
 #endif

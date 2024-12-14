@@ -1,4 +1,4 @@
-name = "Newb Reimagined"
+name = "Newb Reimagined §bOptimized§r"
 version = [0, 15, 7]
 min_supported_mc_version = [1, 21, 20]
 description = '''
@@ -28,58 +28,31 @@ credits = '''
 # subpacks are arranged in left to right order
 # right-most subpack is enabled by default
 
-[[subpack]]
-define = "VANILLA_CLOUDS"
-materials = ["Clouds"]
-description = '''
-§lVanilla Clouds\n§r§7No Aurora
-'''
 
 [[subpack]]
-define = "SOFT_CLOUDS"
+define = "LOW"
 materials = ["RenderChunk", "Clouds"]
 description = '''
-§lSoft Clouds\n§r§7Cirrus Clouds Style, No Aurora
+§l§2Low\n§r§7Vanilla Clouds, No Aurora, No Wave, No Glow Leak, No Fog
 '''
 
 [[subpack]]
-define = "DOUBLE_CLOUDS"
-materials = ["Clouds"]
-description = '''
-§lDouble Cloud Layers\n§r§7Two Cloud Layers, No Aurora
-'''
-
-[[subpack]]
-define = "ENDSKY1"
-materials = ["RenderChunk", "EndSky"]
-description = '''
-§lEnd Sky 1\n§r§7 End Sky Type 1
-'''
-
-[[subpack]]
-define = "ALWAYS_REFL"
-materials = ["RenderChunk", "Sky"]
-description = '''
-§lAlways Reflection\n§r§7Ground Reflection, Aurora Reflection
-'''
-
-[[subpack]]
-define = "AURORA2"
+define = "LITE"
 materials = ["RenderChunk", "Clouds"]
 description = '''
-§lAurora\n§r§7Aurora §bLight Blue §aGreen§r
+§l§aLite\n§r§7Vanilla Clouds, No Aurora, No Wave, No Glow Leak
 '''
 
 [[subpack]]
-define = "AURORA1"
+define = "MEDIUM"
 materials = ["RenderChunk", "Clouds"]
 description = '''
-§lAurora\n§r§7Aurora §bLight Blue §uPurple§r
+§l§6Medium\n§r§7Soft Clouds, No Aurora, No Wave, No Glow Leak
 '''
 
 [[subpack]]
-define = "COMP"
+define = "CDEF"
 materials = []
 description = '''
-§lDefault\n§r§7Rounded Clouds, No Aurora
+§lDefault\n§r§7Rounded Clouds, No Aurora, No Wave, No Glow Leak
 '''
